@@ -62,22 +62,20 @@ func (conf *AWSConfig) UploadToS3(path, key string) {
 func NewCamera() *Camera {
 	var err error
 
-	var width string
-	sw := os.Getenv("IMAGE_WIDTH")
-	if sw == "" {
+	width := os.Getenv("IMAGE_WIDTH")
+	if width == "" {
 		width = "1920"
 	} else {
-		if _, err = strconv.Atoi(sw); err != nil {
+		if _, err = strconv.Atoi(width); err != nil {
 			log.Fatal("$IMAGE_WIDTH must be integer.")
 		}
 	}
 
-	var height string
-	sh := os.Getenv("IMAGE_HEIGHT")
-	if sh == "" {
+	height := os.Getenv("IMAGE_HEIGHT")
+	if height == "" {
 		height = "1080"
 	} else {
-		if _, err = strconv.Atoi(sh); err != nil {
+		if _, err = strconv.Atoi(height); err != nil {
 			log.Fatal("$IMAGE_HEIGHT must be integer.")
 		}
 	}

@@ -107,7 +107,7 @@ func main() {
 	}
 	defer os.RemoveAll(dir)
 
-	name := ft + "jpg"
+	name := ft + ".jpg"
 	path := filepath.Join(dir, name)
 
 	// Generate image file
